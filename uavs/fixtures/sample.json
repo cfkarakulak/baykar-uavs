@@ -1,4 +1,14 @@
 [{
+        "model": "auth.User",
+        "pk": 1,
+        "fields": {
+            "username": "baykar",
+            "email": "baykar@gmail.com",
+            "is_superuser": true,
+            "password": "pbkdf2_sha256$390000$GehtJ3l3DvwIBLzfR5JZUU$qYDz4QFACopXWwcF2AqAMcYQiTclGCbgv/FQpbWm/bk="
+        }
+    },
+    {
         "model": "uavs.uavcompany",
         "pk": 1,
         "fields": {
