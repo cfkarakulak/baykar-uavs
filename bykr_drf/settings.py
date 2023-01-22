@@ -97,10 +97,10 @@ WSGI_APPLICATION = "bykr_drf.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "uavs",
+        "NAME": "uav",
         "USER": "postgres",
-        "PASSWORD": ".Cemre94.",
-        "HOST": "localhost",
+        "PASSWORD": "uav",
+        "HOST": "uav_postgres",
         "PORT": 5432,
     }
 }
