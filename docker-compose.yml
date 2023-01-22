@@ -1,0 +1,65 @@
+version: '3.3'
+
+services:
+  postgres:
+    container_name: uav_postgres
+    build:
+      context: ./
+      dockerfile: ./docker/postgresql/Dockerfile
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-uav}
+      PGDATA: /data/postgres
+      APP_DB_USER: uav
+      APP_DB_PASS: uav
+      APP_DB_NAME: uav
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    networks:
+      - postgres
+
+  python:
+    container_name: uav_python
+    build:
+      context: ./
+      dockerfile: ./docker/python/Dockerfile
+    tty: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./src/api:/app"
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    networks:
+      - postgres
+    restart: always
+
+  dashboard:
+    restart: on-failure
+    container_name: uav_dashboard
+    build:
+      context: ./
+      dockerfile: ./docker/svelte/Dockerfile
+    volumes:
+      - "./src/dashboard/src:/dashboard/src"
+    working_dir: /dashboard
+    # command: npm run dev
+    ports:
+      - 3000:3000
+      - 24678:24678
+      - 5173:5173
+
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+  postgres:
