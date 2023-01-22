@@ -1,0 +1,76 @@
+[{
+        "model": "uavs.uavcompany",
+        "pk": 1,
+        "fields": {
+            "name": "Baykar"
+        }
+    },
+    {
+        "model": "uavs.uavcategory",
+        "pk": 1,
+        "fields": {
+            "name": "İHA0"
+        }
+    },
+    {
+        "model": "uavs.uavcategory",
+        "pk": 2,
+        "fields": {
+            "name": "İHA1"
+        }
+    },
+    {
+        "model": "uavs.uavcategory",
+        "pk": 3,
+        "fields": {
+            "name": "İHA2"
+        }
+    },
+    {
+        "model": "uavs.uavcategory",
+        "pk": 4,
+        "fields": {
+            "name": "İHA3"
+        }
+    },
+    {
+        "model": "uavs.uavbrand",
+        "pk": 1,
+        "fields": {
+            "name": "Bayraktar Akıncı",
+            "company_id": "1"
+        }
+    },
+    {
+        "model": "uavs.uavbrand",
+        "pk": 2,
+        "fields": {
+            "name": "Bayraktar DİHA",
+            "company_id": "1"
+        }
+    },
+    {
+        "model": "uavs.uavbrand",
+        "pk": 3,
+        "fields": {
+            "name": "Bayraktar Mini İHA",
+            "company_id": "1"
+        }
+    },
+    {
+        "model": "uavs.uavbrand",
+        "pk": 4,
+        "fields": {
+            "name": "Bayraktar TB2",
+            "company_id": "1"
+        }
+    },
+    {
+        "model": "uavs.uavbrand",
+        "pk": 5,
+        "fields": {
+            "name": "Bayraktar TB3",
+            "company_id": "1"
+        }
+    }
+]
