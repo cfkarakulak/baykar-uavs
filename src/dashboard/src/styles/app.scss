@@ -1,0 +1,31 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    --color-fill: 243, 244, 246; // #f3f4f6
+    --color-base: 31, 41, 55; // #1f2937
+    --color-inverted: 255, 255, 255; // #ffffff
+    --color-primary: 75, 79, 223; // #4b4fdf
+    --color-gray: 156, 163, 175; // #9CA3AF
+    --color-line: 209, 213, 219; // #D1D5DB
+
+    // theme example code
+    --color-text-muted: 199, 210, 254;
+    --color-text-inverted: 79, 70, 229;
+    // --color-fill: 67, 56, 202;
+    --color-button-accent: 255, 255, 255;
+    --color-button-accent-hover: 238, 242, 255;
+    --color-button-muted: 99, 102, 241;
+  }
+
+  svg {
+    display: inline;
+  }
+}
+
+@import "main.scss"
